@@ -1,0 +1,38 @@
+---
+title: "Untitled"
+author: "Martin Rosenvinge"
+date: "2/13/2022"
+output: html_document
+---
+
+```{r}
+
+library(tidyverse)
+library(ggforce)
+install.packages("ggforce")
+
+Project <- read.csv2("./data/ww1movies.csv")
+View(Project)
+colnames(Project)
+
+
+ggplot(data = Project) + 
+  geom_point(mapping = aes(x = Amount_of_votes, 
+                           y = `IMDB_Rating`)) +
+  facet_zoom(ylim = c(80,90)) +   
+  
+  labs(x = "Amount_of_votes",
+       y = "IMDB_Rating",
+       title = "WW1_Movies")
+
+
+
+
+
+
+
+
+```
+
+
+
